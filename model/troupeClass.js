@@ -16,8 +16,9 @@ class troupeClass {
     suppSpectacle(spectacle) {
         this.spectacles = this.spectacles.filter(s => s !== spectacle);
     }
-    
+
     getInfos() {
         return `Troupe [ID: ${this.id}, Nom: ${this.nom}, spectacle: ${this.spectacles.join(', ')}]`;
     }
 }
+module.exports = troupeClass;

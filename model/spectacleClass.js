@@ -9,3 +9,4 @@ class spectacleClass {
         this.troupe.push(troupe);
     }
 }
+module.exports = spectacleClass;

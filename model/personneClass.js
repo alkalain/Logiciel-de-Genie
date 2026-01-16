@@ -1,7 +1,8 @@
 class Personne {
-  constructor(id, nom, email) {
+  constructor(id, nom, tel, email) {
     this.id = id;
     this.nom = nom;
+    this.tel = tel;
     this.email = email;
     this.billets = [];
   }
@@ -9,3 +10,4 @@ class Personne {
     this.billets.push(billet);
   }
 }
+module.exports = Personne;

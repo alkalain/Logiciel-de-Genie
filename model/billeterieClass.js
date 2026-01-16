@@ -35,3 +35,4 @@ class Billetterie {
     }
     
 }
+module.exports = Billetterie;

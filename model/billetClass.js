@@ -8,3 +8,4 @@ class billetClass {
         this.proprietaireNom = personne.nom;
     }
 }
+module.exports = billetClass;

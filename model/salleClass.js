@@ -24,3 +24,4 @@ class salleClass {
         return this.id;
     }
 }
+module.exports = salleClass;

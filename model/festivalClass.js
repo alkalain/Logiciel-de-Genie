@@ -1,13 +1,14 @@
-class festivalClass {
+class festival {
     constructor(nom) {
         this.id = id
         this.nom = nom;
-        this.spectacle = [];
+        this.programmation = [];
     }
-    addSpectacle(spectacle) {
-        this.spectacle.push(spectacle);
+
+    addProgrammation(programmation) {
+        this.programmation.push(programmation);
+        programmation.salle.prix > 0 ? new Billetterie(programmation.ville, this.id) : null;
     }
-    suppSpectacle(spectacle) {
-        this.spectacle = this.spectacle.filter(s => s !== spectacle);
-    }
+
 }
+module.exports = festival;

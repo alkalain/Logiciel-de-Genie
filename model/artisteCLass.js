@@ -15,3 +15,4 @@ class artisteClass {
         return new artisteClass(this.id, tel, nom);
     }
 }
+module.exports = artisteClass;

@@ -29,5 +29,5 @@ class villeClass {
         if (this.programmations.length === 0) return 0;
         return Math.min(...this.programmations.map(prog => prog.capacite));
     }
-
 }
+module.exports = villeClass;
