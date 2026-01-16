@@ -1,9 +1,10 @@
 class salleClass {
-    constructor(nomSalle, adresse, capacite) {
+    constructor(ville, nomSalle, adresse, capacite) {
         this.id = salleClass.incrementId();
+        this.ville = ville;
         this.nomSalle = nomSalle;
         this.adresse = adresse;
-        this.capacite = capacite;;
+        this.capacite = capacite;
     }
 
     villeEtape() {

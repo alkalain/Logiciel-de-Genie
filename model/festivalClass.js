@@ -1,5 +1,6 @@
 class festivalClass {
     constructor(nom) {
+        this.id = id
         this.nom = nom;
         this.spectacle = [];
     }

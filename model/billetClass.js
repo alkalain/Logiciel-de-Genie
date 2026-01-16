@@ -1,7 +1,8 @@
 class billetClass {
-    constructor(id, prix, personne) {
+    constructor(id, prix, spectacleId, personne) {
         this.id = id;
         this.prix = prix;
+        this.spectacleId = this.spectacleId;
         this.vendu = true;
         this.proprietaireId = personne.id;
         this.proprietaireTel = personne.tel;
