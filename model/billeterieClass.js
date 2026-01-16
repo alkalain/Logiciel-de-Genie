@@ -26,12 +26,12 @@ class Billetterie {
         throw new Error("Plus de billets disponibles");
     }
 
-    recetteTotale() {
-        return this.billets.reduce((total, billet) => total + billet.getPrix(), 0);
+    billetsVendusFestival(festivalId) {
+        return this.billets.filter(billet => billet.festivalId === festivalId);
     }
 
-    billetsFestival(festivalId) {
-        return this.billets.filter(billet => billet.festivalId === festivalId);
-    }   
+    billetsVendusSalle(salleNom) {
+        return this.billets.filter(billet => billet.salleNom === salleNom);
+    }
     
 }

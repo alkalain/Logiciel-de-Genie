@@ -5,6 +5,8 @@ class salleClass {
         this.nomSalle = nomSalle;
         this.adresse = adresse;
         this.capacite = capacite;
+        this.prix = 0;
+        this.reduction = 0;
     }
 
     villeEtape() {
