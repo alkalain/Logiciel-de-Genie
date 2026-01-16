@@ -40,11 +40,13 @@ const programmation2 = new Programmation(spectacle1, salleClass, horaireDebut);
 festival.addProgrammation(programmation1);
 festival.addProgrammation(programmation2);
 villeClass.addProgrammation(programmation1);
+villeClass.addProgrammation(programmation2);
+
 villeClass.getPriceAllProgramations();
 let billeterie = festival.createBilleterie(festival.getProgrammation());
 
-/*alice.acheterBillet(billet1);
-bob.acheterBillet(billet2);
+billeterie.vendreBilletVilleLieu(alice, salleClass.getId());
+/*bob.acheterBillet(billet2);
 alice.acheterBillet(billet3); // billet pour un autre festival*/
 console.log("✔ Billets vendus");
 
@@ -52,3 +54,6 @@ console.log("Billeterie générée :", billeterie);
 
 // 5. Tests
 console.log("Recette totale :", billeterie.billetsVendusFestival(festival.id));
+console.log("Billets vendus pour la salle 'Grande Salle' :", billeterie.billetsVendusSalle(salleClass.getId()));
+
+console.log("===== FIN DES TESTS =====");

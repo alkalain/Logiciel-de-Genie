@@ -7,8 +7,5 @@ class Personne {
     this.email = email;
     this.billets = [];
   }
-  acheterBillet(billet) {
-    this.billets.push(billet);
-  }
 }
 module.exports = Personne;

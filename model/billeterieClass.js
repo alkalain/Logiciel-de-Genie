@@ -22,8 +22,8 @@ class Billetterie {
         return this.billets.filter(billet => billet.festivalId === festivalId);
     }
 
-    billetsVendusSalle(salleNom) {
-        return this.billets.filter(billet => billet.salleNom === salleNom);
+    billetsVendusSalle(salleId) {
+        return this.billets.filter(billet => billet.salleId === salleId);
     }
     
 }
