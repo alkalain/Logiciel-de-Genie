@@ -3,9 +3,9 @@ class spectacleClass {
         this.id = id;
         this.titre = titre;
         this.duree = duree;
-        this.artistes = [];
+        this.troupe = [];
     }
-    addArtistes(artiste) {
-        this.artistes.push(artiste);
+    addTroupe(troupe) {
+        this.troupe.push(troupe);
     }
 }

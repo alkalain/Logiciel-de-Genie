@@ -11,4 +11,7 @@ class artisteClass {
     getId() {
         return this.id;
     }
+    createArtiste(nom, tel) {
+        return new artisteClass(this.id, tel, nom);
+    }
 }
