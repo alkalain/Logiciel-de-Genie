@@ -1,12 +1,13 @@
-import Personne from "./Personne.js";
+import Personne from "./personneClass.js";
 import Billet from "./billetClass.js";
-import Billeterie from "./Billeterie.js";
-import Programmation from "./Programmation.js";
+import Billeterie from "./billeterieClass.js";
+import Programmation from "./programmationClass.js";
 import Salle from "./salleClass.js";
 import Spectacle from "./spectacleClass.js";
 import Troupe from "./troupeClass.js";
 import Ville from "./villeClass.js";
-import Festival from "./festival.js";
+import Festival from "./festivalClass.js";
+import Artiste from "./artisteClass.js";
 
 console.log("===== DÉBUT DES TESTS =====");
 
@@ -27,21 +28,28 @@ const billet3 = new Billet(3, 15, alice, 200); // autre festival
 
 console.log("✔ Billets créés");
 
-// Vente des billets
-festival.vendreBillet(billet1);
-festival.vendreBillet(billet2);
-festival.vendreBillet(billet3);
+const spectacleClass = new Spectacle("Spectacle Magique", "Un spectacle plein de magie");
+const spectacle1 = new Spectacle("Spectacleeeeeeee", "Un bete de spectacle");
+const troupeClass = new Troupe("Troupe Magique");
+const villeClass = new Ville("Paris", "ile de france");
+const salleClass = new Salle(villeClass, "Grande Salle", "Paris", 50, 10, 50);
+const horaireDebut = new Date("2024-07-01T20:00:00");
+const programmation1 = new Programmation(spectacleClass, salleClass, horaireDebut);
+const programmation2 = new Programmation(spectacle1, salleClass, horaireDebut);
 
+// Vente des billets
+festival.addProgrammation(programmation1);
+festival.addProgrammation(programmation2);
+villeClass.addProgrammation(programmation1);
+villeClass.getPriceAllProgramations();
+let billeterie = festival.createBilleterie(festival.getProgrammation());
+
+/*alice.acheterBillet(billet1);
+bob.acheterBillet(billet2);
+alice.acheterBillet(billet3); // billet pour un autre festival*/
 console.log("✔ Billets vendus");
 
-// Test billetsFestival()
-const billetsFestival = festival.billetsFestival();
-console.log("🎟️ Billets du festival 100 :", billetsFestival);
-console.assert(billetsFestival.length === 2, "❌ Erreur filtre festival");
+console.log("Billeterie générée :", billeterie);
 
-// Test prix total
-const total = festival.prixTotalBillets();
-console.log("💰 Prix total des billets du festival :", total);
-console.assert(total === 50, "❌ Erreur calcul prix total");
-
-console.log("===== TOUS LES TESTS SONT PASSÉS ✅ =====");
+// 5. Tests
+console.log("Recette totale :", billeterie.billetsVendusFestival(festival.id));

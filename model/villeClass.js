@@ -4,7 +4,7 @@ class villeClass {
         this.departement = departement;
         this.programmations = [];
     }
-    addSpectacle(programmation) {
+    addProgrammation(programmation) {
         this.programmations.push(programmation);
     }
     getPriceAllProgramations() {

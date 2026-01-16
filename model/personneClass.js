@@ -1,6 +1,7 @@
 class Personne {
-  constructor(id, nom, tel, email) {
-    this.id = id;
+  static incrementId=0;
+  constructor(nom, tel, email) {
+    this.id = Personne.incrementId++;
     this.nom = nom;
     this.tel = tel;
     this.email = email;

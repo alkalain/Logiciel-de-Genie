@@ -1,6 +1,7 @@
 class artisteClass {
-    constructor(id, tel, nom) {
-        this.id = id;   
+    static incrementalId = 0;
+    constructor(tel, nom) {
+        this.id = artisteClass.incrementalId++;   
         this.tel = tel;
         this.nom = nom;
     }

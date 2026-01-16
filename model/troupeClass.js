@@ -1,24 +1,20 @@
 class troupeClass {
-    constructor(id, nom) {
-        this.id = id;
+    static incrementalId = 0;   
+    constructor(nom) {
+        this.id = troupeClass.incrementalId++;
         this.nom = nom;
         this.artistes = [];
-        this.spectacles = [];
     }
-    addArtiste(artiste) {
-        this.artistes.push(artiste);
-    }
-
-    addSpectacle(spectacle) {
-        this.spectacles.push(spectacle);
+    addArtiste(personne) {
+        this.artistes.push(personne);
     }
 
-    suppSpectacle(spectacle) {
-        this.spectacles = this.spectacles.filter(s => s !== spectacle);
+    suppArtiste(personneId) {
+        this.artistes = this.artistes.filter(artiste => artiste.id !== personneId);
     }
 
     getInfos() {
-        return `Troupe [ID: ${this.id}, Nom: ${this.nom}, spectacle: ${this.spectacles.join(', ')}]`;
+        return `Troupe [ID: ${this.id}, Nom: ${this.nom}]`;
     }
 }
 module.exports = troupeClass;

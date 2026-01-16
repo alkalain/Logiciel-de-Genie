@@ -5,14 +5,6 @@ class Billetterie {
         this.billets = [];
     }
 
-    billetsDisponibles() {
-        return this.billets.filter(b => !b.vendu);
-    }
-
-    billetsVendus() {
-        return this.billets.filter(b => b.vendu);
-    }
-
     vendreBilletVille(personne) {
         if(this.ville.getMinCapacity()>0) {
             this.billets.push(new billetClass(id, this.ville.AchatBilletVille(), this.festivalId, personne));
