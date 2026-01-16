@@ -1,12 +1,12 @@
 class Programmation {
-    constructor(festival, lieuClass, horaireDebut, prix, capacite) {
+    constructor(festival, lieu, horaireDebut, prix, capacite) {
         this.festival = festival;
-        this.ville = lieuClass.ville;
-        this.lieu = lieuClass;
+        this.ville = lieu.ville;
+        this.lieu = lieu.nom;
         this.horaireDebut = horaireDebut;
         this.prix = prix;
         this.capacite = capacite;
-        this.billetterie = prix > 0 ? new Billetterie(capacite) : null;
+        this.billetterie = prix > 0 ? new Billetterie(prix, capacite) : null;
     }
 
     modifHoraire(newHoraire) {

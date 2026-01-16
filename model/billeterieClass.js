@@ -1,11 +1,10 @@
 class Billetterie {
-    constructor(prix, nbBillet) {
-        this.prix = prix;
-        this.nbBillet = nbBillet;
+    constructor(prix, ville) {
+        this.ville = ville;
         this.billets = [];
 
         // Création automatique des billets
-        for (let id = 1; id <= nbBillet; id++) {
+        for (let id = 1; id <= ville.capacite; id++) {
             this.billets.push(new billetClass(id, prix));
         }
     }
@@ -18,13 +17,19 @@ class Billetterie {
         return this.billets.filter(b => b.vendu);
     }
 
-    vendreBillet(personne) {
-    const billet = this.billetsDisponibles()[0];
-
-    if (!billet) {
+    vendreBilletVille(personne) {
+        if(this.ville.programmations.min(prog => prog.capacite>0)) {
+            new billetClass(id, this.ville.AchatBilletVille());
+        }
         throw new Error("Plus de billets disponibles");
     }
-
+    vendreBilletVilleLieu(personne, lieu) {
+        if(this.ville.programmations.lieu(prog => prog.capacite>0)) {
+            new billetClass(id, this.ville.AchatBilletLieu(lieu));
+        }
+        throw new Error("Plus de billets disponibles");
+    }
+    
     billet.vendre(personne);
         return billet;
     }
