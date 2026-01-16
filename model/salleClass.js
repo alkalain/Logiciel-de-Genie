@@ -1,6 +1,6 @@
-class lieuClass {
+class salleClass {
     constructor(nomSalle, adresse, capacite) {
-        this.id = lieuClass.incrementId();
+        this.id = salleClass.incrementId();
         this.nomSalle = nomSalle;
         this.adresse = adresse;
         this.capacite = capacite;;

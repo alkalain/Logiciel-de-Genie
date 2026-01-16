@@ -1,11 +1,11 @@
 class billetClass {
-    constructor(id, prix) {
+    constructor(id, prix, personne) {
         this.id = id;
         this.prix = prix;
-        this.vendu = false;
-        this.proprietaireId = null;
-        this.proprietaireTel = null;
-        this.proprietaireNom = null;
+        this.vendu = true;
+        this.proprietaireId = personne.id;
+        this.proprietaireTel = personne.tel;
+        this.proprietaireNom = personne.nom;
 
     }
     getPrix() {
