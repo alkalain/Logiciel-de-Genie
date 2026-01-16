@@ -2,7 +2,7 @@ class Programmation {
     constructor(spectacle, salle, horaireDebut) {
         this.spectacleId = spectacle.id;
         this.ville = salle.ville;
-        this.salle = salle.nomSalle;
+        this.salle = salle.id;
         this.horaireDebut = horaireDebut;
         this.prix = salle.prix * (1 - salle.reduction / 100);
         this.capacite = salle.capacite;

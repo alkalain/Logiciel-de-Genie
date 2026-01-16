@@ -1,6 +1,7 @@
 class billetClass {
-    constructor(id, prix, spectacleId, personne) {
-        this.id = id;
+    static currentId = 1;
+    constructor(prix, spectacleId, personne) {
+        this.id = billetClass.currentId++;
         this.prix = prix;
         this.spectacleId = spectacleId;
         this.proprietaireId = personne.id;

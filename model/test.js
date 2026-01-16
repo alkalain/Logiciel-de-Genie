@@ -46,8 +46,9 @@ villeClass.getPriceAllProgramations();
 let billeterie = festival.createBilleterie(festival.getProgrammation());
 
 billeterie.vendreBilletVilleLieu(alice, salleClass.getId());
-/*bob.acheterBillet(billet2);
-alice.acheterBillet(billet3); // billet pour un autre festival*/
+billeterie.vendreBilletVilleLieu(bob, salleClass.getId());
+billeterie.vendreBilletVilleLieu(alice, salleClass.getId());
+
 console.log("✔ Billets vendus");
 
 console.log("Billeterie générée :", billeterie);

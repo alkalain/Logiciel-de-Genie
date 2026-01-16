@@ -1,22 +1,32 @@
+const billetClass = require("./billetClass");
+
 class Billetterie {
-    constructor(ville, festivalId) {
+    constructor(ville, festival) {
         this.ville = ville;
-        this.festivalId = festivalId;
+        this.festival = festival;
         this.billets = [];
     }
 
     vendreBilletVille(personne) {
-        if(this.ville.getMinCapacity()>0) {
-            this.billets.push(new billetClass(id, this.ville.AchatBilletVille(), this.festivalId, personne));
+        if(this.festival.getMinCapacity()>0) {
+            let billetPersonnel = new billetClass(this.festival.AchatBilletVille(), this.festival.id, personne)
+            this.billets.push(billetPersonnel);
+            personne.billets.push(billetPersonnel);
+            return;
         }
-        throw new Error("Plus de billets disponibles");
+        console.log("Plus de billets disponibles pour la ville");
     }
-    vendreBilletVilleLieu(personne, lieu) {
-        if(this.ville.programmations.find(prog => prog.lieu === lieu && prog.capacite > 0)) {
-            this.billets.push(new billetClass(id, this.ville.AchatBilletLieu(lieu), this.festivalId, personne));
+    vendreBilletVilleLieu(personne, lieuId) {
+        if(this.festival.programmation.find(prog => prog.salle === lieuId && prog.capacite > 0)) {
+            let billetPersonnel = new billetClass(this.festival.AchatBilletLieu(lieuId), this.festival.id, personne);
+            this.billets.push(billetPersonnel);
+            personne.billets.push(billetPersonnel);
+            return;
         }
-        throw new Error("Plus de billets disponibles");
+        console.log("Plus de billets disponibles pour cette salle");
     }
+
+    
 
     billetsVendusFestival(festivalId) {
         return this.billets.filter(billet => billet.festivalId === festivalId);
