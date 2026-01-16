@@ -28,5 +28,5 @@ class Billetterie {
     recetteTotale() {
         return this.billets.reduce((total, billet) => total + billet.getPrix(), 0);
     }
-    }
+    
 }
