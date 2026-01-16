@@ -7,7 +7,6 @@ import Spectacle from "./spectacleClass.js";
 import Troupe from "./troupeClass.js";
 import Ville from "./villeClass.js";
 import Festival from "./festivalClass.js";
-import Artiste from "./artisteClass.js";
 
 console.log("===== DÉBUT DES TESTS =====");
 
