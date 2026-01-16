@@ -3,12 +3,7 @@ class lieuClass {
         this.id = lieuClass.incrementId();
         this.nomSalle = nomSalle;
         this.adresse = adresse;
-        this.capacite = capacite;
-        this.programme = [];
-    }
-
-    addSpectacle(programme) {
-        this.programme.push(programme);
+        this.capacite = capacite;;
     }
 
     villeEtape() {

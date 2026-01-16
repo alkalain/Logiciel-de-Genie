@@ -1,8 +1,8 @@
 class Programmation {
-    constructor(spectacle, ville, lieu, horaireDebut, prix, capacite) {
-        this.spectacle = spectacle;
-        this.ville = ville;
-        this.lieu = lieu;
+    constructor(festival, lieuClass, horaireDebut, prix, capacite) {
+        this.festival = festival;
+        this.ville = lieuClass.ville;
+        this.lieu = lieuClass;
         this.horaireDebut = horaireDebut;
         this.prix = prix;
         this.capacite = capacite;
