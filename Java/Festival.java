@@ -1,0 +1,94 @@
+package genieLogiciel;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Festival {
+    private static Integer incrementalId = 1;
+    private Integer id;
+    private String nom;
+    private List<Programmation> programmation;
+    private Billetterie billeterie;
+
+    public Festival(String nom) {
+        this.id = incrementalId++;
+        this.nom = nom;
+        this.programmation = new ArrayList<>();
+        this.billeterie = new Billetterie("", this);
+    }
+
+    public void addProgrammation(Programmation programmation) {
+        this.programmation.add(programmation);
+    }
+
+    public List<Programmation> getProgrammation() {
+        return programmation;
+    }
+
+    public Billetterie createBilleterie(List<Programmation> programmation) {
+        if (programmation == null || programmation.isEmpty()) {
+            throw new IllegalArgumentException("Programmation invalide");
+        }
+        if (programmation.get(0).getPrix() > 0) {
+            this.billeterie.setVille(programmation.get(0).getVille());
+        }
+        return this.billeterie;
+    }
+
+    public Integer getMinCapacity() {
+        if (programmation.isEmpty()) {
+            return 0;
+        }
+        
+        Integer min = programmation.get(0).getCapacite();
+        for (Programmation prog : programmation) {
+            if (prog.getCapacite() < min) {
+                min = prog.getCapacite();
+            }
+        }
+        return min;
+    }
+
+    public Double achatBilletLieu(Integer lieuId) {
+        Programmation lieu = null;
+        for (Programmation prog : programmation) {
+            if (prog.getSalle().equals(lieuId)) {
+                lieu = prog;
+                break;
+            }
+        }
+        
+        if (lieu != null && lieu.getCapacite() > 0) {
+            lieu.setCapacite(lieu.getCapacite() - 1);
+            return lieu.getPrix();
+        }
+        return 0.0;
+    }
+
+    public Double achatBilletVille() {
+        for (Programmation element : programmation) {
+            element.setCapacite(element.getCapacite() - 1);
+        }
+        return getPriceAllProgramations();
+    }
+
+    public Double getPriceAllProgramations() {
+        Double total = 0.0;
+        for (Programmation prog : programmation) {
+            total += prog.getPrix();
+        }
+        return total;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public Billetterie getBilleterie() {
+        return billeterie;
+    }
+}
