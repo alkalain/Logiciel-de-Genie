@@ -36,4 +36,8 @@ public class Spectacle {
     public List<Troupe> getTroupe() {
         return this.troupe;
     }
+
+    public void supprimerSpectacle(Spectacle spectacle) {
+        // Suppression dans base de données
+    }
 }

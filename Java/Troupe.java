@@ -46,4 +46,8 @@ public class Troupe {
     public List<Personne> getArtistes() {
         return this.artistes;
     }
+
+    public void supprimerTroupe(Troupe troupe) {
+        // Suppression dans base de données
+    }
 }

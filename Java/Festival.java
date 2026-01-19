@@ -91,4 +91,8 @@ public class Festival {
     public Billetterie getBilleterie() {
         return this.billeterie;
     }
+
+    public void supprimerFestival(Festival festival) {
+        // Suppression dans base de données
+    }
 }

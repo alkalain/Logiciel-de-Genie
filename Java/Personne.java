@@ -49,6 +49,10 @@ public class Personne {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+    public void supprimmerPersonne(Personne personne) {
+        // Suppression dans base de données
+    }
 }
 		
 
