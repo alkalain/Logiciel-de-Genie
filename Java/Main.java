@@ -6,60 +6,60 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("===== DÉBUT DES TESTS =====");
 
-        // Création des personnes
+        //création personnes
         Personne alice = new Personne("Alice", "0600000001", "ldlfklfkgf@idfihfhifd");
         Personne bob = new Personne("Bob", "0600000002", "bob@example.com");
 
-        System.out.println("✔ Personnes créées : " + alice.getNom() + ", " + bob.getNom());
+        System.out.println("Personnes créées: " + alice.getNom() + ", " + bob.getNom());
 
-        // Création du festival
+        //création festival
         Festival festival = new Festival("Festival d'été");
-        System.out.println("✔ Festival créé (id=" + festival.getId() + ")");
+        System.out.println("Festival créé (id=" + festival.getId() + ")");
 
-        // Création des spectacles
+        //création spectacles
         Spectacle spectacleClass = new Spectacle("Spectacle Magique", 120);
         Spectacle spectacle1 = new Spectacle("Spectacleeeeeeee", 90);
-        System.out.println("✔ Spectacles créés");
+        System.out.println("Spectacles créés");
 
-        // Création de la troupe
+        //création troupe
         Troupe troupeClass = new Troupe("Troupe Magique");
-        System.out.println("✔ Troupe créée");
+        System.out.println("Troupe créée");
 
-        // Création de la ville
+        //création ville
         Ville villeClass = new Ville("Paris", "Ile de France");
-        System.out.println("✔ Ville créée");
+        System.out.println("Ville créée");
 
-        // Création de la salle
+        //création salle
         Salle salleClass = new Salle(villeClass, "Grande Salle", "Paris", 50, 10.0, 50.0);
-        System.out.println("✔ Salle créée");
+        System.out.println("Salle créée");
 
-        // Création des programmations
+        //création programmations
         Date horaireDebut = new Date(); // ou utilisez SimpleDateFormat pour "2024-07-01T20:00:00"
         Programmation programmation1 = new Programmation(spectacleClass, salleClass, horaireDebut);
         Programmation programmation2 = new Programmation(spectacle1, salleClass, horaireDebut);
-        System.out.println("✔ Programmations créées");
+        System.out.println("Programmations créées");
 
-        // Ajout des programmations
+        //ajout programmations
         festival.addProgrammation(programmation1);
         festival.addProgrammation(programmation2);
         villeClass.addProgrammation(programmation1);
         villeClass.addProgrammation(programmation2);
-        System.out.println("✔ Programmations ajoutées au festival et à la ville");
+        System.out.println("Programmations ajoutées au festival et à la ville");
 
-        // Prix total des programmations de la ville
-        System.out.println("Prix total des programmations : " + villeClass.getPriceAllProgramations());
+        //prix des programmations de la ville (total)
+        System.out.println("Prix total des programmations: " + villeClass.getPriceAllProgramations());
 
-        // Création de la billeterie
+        //création billeterie
         Billetterie billeterie = festival.createBilleterie(festival.getProgrammation());
-        System.out.println("✔ Billeterie créée");
+        System.out.println("Billeterie créée");
 
-        // Vente des billets
+        //vente des billets
         billeterie.vendreBilletVilleLieu(alice, salleClass.getId());
         billeterie.vendreBilletVilleLieu(bob, salleClass.getId());
         billeterie.vendreBilletVilleLieu(alice, salleClass.getId());
-        System.out.println("✔ Billets vendus");
+        System.out.println("Billets vendus");
 
-        System.out.println("Billeterie générée : " + billeterie.getBillets().size() + " billets vendus");
+        System.out.println("Billeterie générée: " + billeterie.getBillets().size() + " billets vendus");
 
         // Tests
         System.out.println("Recette totale (billets vendus pour le festival) : " + 
@@ -75,7 +75,5 @@ public class Main {
                 " - Propriétaire: " + billet.getProprietaireNom() +
                 " (" + billet.getProprietaireTel() + ")");
         }
-
-        System.out.println("\n===== FIN DES TESTS =====");
     }
 }
