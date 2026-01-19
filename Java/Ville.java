@@ -41,14 +41,14 @@ public class Ville {
     }
 
     public String getNom() {
-        return nom;
+        return this.nom;
     }
 
     public String getDepartement() {
-        return departement;
+        return this.departement;
     }
 
     public List<Programmation> getProgrammations() {
-        return programmations;
+        return this.programmations;
     }
 }

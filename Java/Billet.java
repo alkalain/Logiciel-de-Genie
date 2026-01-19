@@ -1,14 +1,14 @@
 package genieLogiciel;
 
 public class Billet {
-    private static Integer idBillet = 1;
+    private static int idBillet = 1;
     private Double prix;
-    private Integer spectacleId;
-    private Integer proprietaireId;
+    private int spectacleId;
+    private int proprietaireId;
     private String proprietaireTel;
     private String proprietaireNom;
 
-    public Billet(Double prix, Integer spectacleId, Personne personne) {
+    public Billet(Double prix, int spectacleId, Personne personne) {
         this.idBillet = idBillet++;
         this.prix = prix;
         this.spectacleId = spectacleId;
@@ -17,27 +17,27 @@ public class Billet {
         this.proprietaireNom = personne.getNom();
     }
 
-    public Integer getId() {
-        return idBillet;
+    public int getId() {
+        return this.idBillet;
     }
 
     public Double getPrix() {
-        return prix;
+        return this.prix;
     }
 
-    public Integer getSpectacleId() {
-        return spectacleId;
+    public int getSpectacleId() {
+        return this.spectacleId;
     }
 
-    public Integer getProprietaireId() {
-        return proprietaireId;
+    public int getProprietaireId() {
+        return this.proprietaireId;
     }
 
     public String getProprietaireTel() {
-        return proprietaireTel;
+        return this.proprietaireTel;
     }
 
     public String getProprietaireNom() {
-        return proprietaireNom;
+        return this.proprietaireNom;
     }
 }

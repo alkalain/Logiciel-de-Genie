@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Personne {
 	
-	private static Integer idPersonne = 1;
+	private static int idPersonne = 1;
 	private String nom;
 	private String numTel;
 	private String email;
@@ -18,24 +18,24 @@ public class Personne {
 		this.billets = new ArrayList<>();
 	}
 	
-	public Integer getId() {
-		return idPersonne;
+	public int getId() {
+		return this.idPersonne;
 	}
 
 	public String getNom() {
-		return nom;
+		return this.nom;
 	}
 
 	public String getNumTel() {
-		return numTel;
+		return this.numTel;
 	}
 
 	public String getEmail() {
-		return email;
+		return this.email;
 	}
 
 	public List<Integer> getBillets() {
-		return billets;
+		return this.billets;
 	}
 
 	public void setNom(String nom) {

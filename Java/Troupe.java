@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Troupe {
-    private static Integer incrementalId = 0;
-    private Integer id;
+    private static int incrementalId = 0;
+    private int id;
     private String nom;
     private List<Personne> artistes;
 
@@ -19,11 +19,11 @@ public class Troupe {
         this.artistes.add(personne);
     }
 
-    public void suppArtiste(Integer personneId) {
+    public void suppArtiste(int personneId) {
         List<Personne> nouvelleListeArtistes = new ArrayList<>();
 
         for (Personne artiste : artistes) {
-            if (!artiste.getId().equals(personneId)) {
+            if (artiste.getId() !=(personneId)) {
                 nouvelleListeArtistes.add(artiste);
             }
         }
@@ -35,15 +35,15 @@ public class Troupe {
         return String.format("Troupe [ID: %d, Nom: %s]", this.id, this.nom);
     }
 
-    public Integer getId() {
-        return id;
+    public int getId() {
+        return this.id;
     }
 
     public String getNom() {
-        return nom;
+        return this.nom;
     }
 
     public List<Personne> getArtistes() {
-        return artistes;
+        return this.artistes;
     }
 }

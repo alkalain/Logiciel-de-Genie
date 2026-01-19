@@ -25,30 +25,30 @@ public class Salle {
     }
 
     public Integer getId() {
-        return id;
+        return this.id;
     }
 
     public String getVille() {
-        return ville;
+        return this.ville;
     }
 
     public String getNomSalle() {
-        return nomSalle;
+        return this.nomSalle;
     }
 
     public String getAdresse() {
-        return adresse;
+        return this.adresse;
     }
 
     public Integer getCapacite() {
-        return capacite;
+        return this.capacite;
     }
 
     public Double getPrix() {
-        return prix;
+        return this.prix;
     }
 
     public Double getReduction() {
-        return reduction;
+        return this.reduction;
     }
 }

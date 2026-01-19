@@ -3,12 +3,12 @@ package genieLogiciel;
 import java.util.Date;
 
 public class Programmation {
-    private Integer spectacleId;
+    private int spectacleId;
     private String ville;
-    private Integer salle;
+    private int salle;
     private Date horaireDebut;
     private Double prix;
-    private Integer capacite;
+    private int capacite;
 
     public Programmation(Spectacle spectacle, Salle salle, Date horaireDebut) {
         this.spectacleId = spectacle.getId();
@@ -23,31 +23,31 @@ public class Programmation {
         this.horaireDebut = newHoraire;
     }
 
-    public Integer getSpectacleId() {
-        return spectacleId;
+    public int getSpectacleId() {
+        return this.spectacleId;
     }
 
     public String getVille() {
-        return ville;
+        return this.ville;
     }
 
-    public Integer getSalle() {
-        return salle;
+    public int getSalle() {
+        return this.salle;
     }
 
     public Date getHoraireDebut() {
-        return horaireDebut;
+        return this.horaireDebut;
     }
 
     public Double getPrix() {
-        return prix;
+        return this.prix;
     }
 
-    public Integer getCapacite() {
-        return capacite;
+    public int getCapacite() {
+        return this.capacite;
     }
 
-    public void setCapacite(Integer capacite) {
+    public void setCapacite(int capacite) {
         this.capacite = capacite;
     }
 }

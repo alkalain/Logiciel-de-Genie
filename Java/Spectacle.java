@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Spectacle {
-    private static Integer incrementId = 0;
-    private Integer id;
+    private static int incrementId = 0;
+    private int id;
     private String titre;
-    private Integer duree;
+    private int duree;
     private List<Troupe> troupe;
 
-    public Spectacle(String titre, Integer duree) {
+    public Spectacle(String titre, int duree) {
         this.id = incrementId++;
         this.titre = titre;
         this.duree = duree;
@@ -21,19 +21,19 @@ public class Spectacle {
         this.troupe.add(troupe);
     }
 
-    public Integer getId() {
-        return id;
+    public int getId() {
+        return this.id;
     }
 
     public String getTitre() {
-        return titre;
+        return this.titre;
     }
 
-    public Integer getDuree() {
-        return duree;
+    public int getDuree() {
+        return this.duree;
     }
 
     public List<Troupe> getTroupe() {
-        return troupe;
+        return this.troupe;
     }
 }

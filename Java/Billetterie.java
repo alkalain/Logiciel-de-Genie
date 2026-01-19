@@ -24,11 +24,11 @@ public class Billetterie {
         }
     }
 
-    public void vendreBilletVilleLieu(Personne personne, Integer lieuId) {
+    public void vendreBilletVilleLieu(Personne personne, int lieuId) {
         boolean salleDisponible = false;
         
         for (Programmation prog : festival.getProgrammation()) {
-            if (prog.getSalle().equals(lieuId) && prog.getCapacite() > 0) {
+            if (prog.getSalle() == lieuId && prog.getCapacite() > 0) {
                 salleDisponible = true;
                 break;
             }
@@ -43,11 +43,11 @@ public class Billetterie {
         }
     }
 
-    public List<Billet> billetsVendusFestival(Integer festivalId) {
+    public List<Billet> billetsVendusFestival(int festivalId) {
         List<Billet> resultat = new ArrayList<>();
         
         for (Billet billet : billets) {
-            if (billet.getSpectacleId().equals(festivalId)) {
+            if (billet.getSpectacleId() == festivalId) {
                 resultat.add(billet);
             }
         }
@@ -55,11 +55,11 @@ public class Billetterie {
         return resultat;
     }
 
-    public List<Billet> billetsVendusSalle(Integer salleId) {
+    public List<Billet> billetsVendusSalle(int salleId) {
         List<Billet> resultat = new ArrayList<>();
         
         for (Billet billet : billets) {
-            if (billet.getSpectacleId().equals(salleId)) {
+            if (billet.getSpectacleId() == salleId) {
                 resultat.add(billet);
             }
         }
@@ -68,7 +68,7 @@ public class Billetterie {
     }
 
     public String getVille() {
-        return ville;
+        return this.ville;
     }
 
     public void setVille(String ville) {
@@ -76,10 +76,18 @@ public class Billetterie {
     }
 
     public Festival getFestival() {
-        return festival;
+        return this.festival;
     }
 
     public List<Billet> getBillets() {
-        return billets;
+        return this.billets;
+    }
+
+    public Double getRecetteTotal() {
+        Double total = 0.0;
+        for (Billet billet : billets) {
+            total += billet.getPrix();
+        }
+        return total;
     }
 }

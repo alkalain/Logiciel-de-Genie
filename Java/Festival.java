@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Festival {
-    private static Integer incrementalId = 1;
-    private Integer id;
+    private static int incrementalId = 1;
+    private int id;
     private String nom;
     private List<Programmation> programmation;
     private Billetterie billeterie;
@@ -35,12 +35,12 @@ public class Festival {
         return this.billeterie;
     }
 
-    public Integer getMinCapacity() {
+    public int getMinCapacity() {
         if (programmation.isEmpty()) {
             return 0;
         }
         
-        Integer min = programmation.get(0).getCapacite();
+        int min = programmation.get(0).getCapacite();
         for (Programmation prog : programmation) {
             if (prog.getCapacite() < min) {
                 min = prog.getCapacite();
@@ -49,10 +49,10 @@ public class Festival {
         return min;
     }
 
-    public Double achatBilletLieu(Integer lieuId) {
+    public Double achatBilletLieu(int lieuId) {
         Programmation lieu = null;
         for (Programmation prog : programmation) {
-            if (prog.getSalle().equals(lieuId)) {
+            if (prog.getSalle() == lieuId) {
                 lieu = prog;
                 break;
             }
@@ -80,15 +80,15 @@ public class Festival {
         return total;
     }
 
-    public Integer getId() {
-        return id;
+    public int getId() {
+        return this.id;
     }
 
     public String getNom() {
-        return nom;
+        return this.nom;
     }
 
     public Billetterie getBilleterie() {
-        return billeterie;
+        return this.billeterie;
     }
 }
