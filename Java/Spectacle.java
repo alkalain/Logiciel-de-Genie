@@ -37,6 +37,14 @@ public class Spectacle {
         return this.troupe;
     }
 
+    public Spectacle duplicateSpectacle() {
+        Spectacle nouveauSpectacle = new Spectacle(this.titre, this.duree);
+        for (Troupe troupeExistante : this.troupe) {
+            nouveauSpectacle.addTroupe(troupeExistante);
+        }
+        return nouveauSpectacle;
+    }
+
     public void supprimerSpectacle(Spectacle spectacle) {
         // Suppression dans base de données
     }

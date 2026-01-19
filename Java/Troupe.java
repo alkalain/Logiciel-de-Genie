@@ -47,6 +47,14 @@ public class Troupe {
         return this.artistes;
     }
 
+    public Troupe duplicateTroupe() {
+        Troupe nouvelleTroupe = new Troupe(this.nom);
+        for (Personne artisteExistant : this.artistes) {
+            nouvelleTroupe.addArtiste(artisteExistant);
+        }
+        return nouvelleTroupe;
+    }
+
     public void supprimerTroupe(Troupe troupe) {
         // Suppression dans base de données
     }

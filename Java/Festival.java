@@ -92,6 +92,14 @@ public class Festival {
         return this.billeterie;
     }
 
+    public Festival duplicateFestival() {
+        Festival nouveauFestival = new Festival(this.nom + " - copie");
+        for (Programmation programmation : this.programmation) {
+                nouveauFestival.addProgrammation(programmation);
+        }
+        return nouveauFestival;
+    }
+
     public void supprimerFestival(Festival festival) {
         // Suppression dans base de données
     }
