@@ -2,16 +2,16 @@ package genieLogiciel;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Spectateur {
+public class Personne {
 	
-	private static Integer idSpectateur = 1;
+	private static Integer idPersonne = 1;
 	private String nom;
 	private String numTel;
 	private String email;
 	private List<Integer> billets;
 	
-	public Spectateur(String nom, String numTel, String email) {
-		this.idSpectateur = idSpectateur++;
+	public Personne(String nom, String numTel, String email) {
+		this.idPersonne = idPersonne++;
 		this.nom = nom;
 		this.numTel = numTel;
 		this.email = email;
@@ -19,7 +19,7 @@ public class Spectateur {
 	}
 	
 	public Integer getId() {
-		return idSpectateur;
+		return idPersonne;
 	}
 
 	public String getNom() {

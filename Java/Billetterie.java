@@ -14,17 +14,17 @@ public class Billetterie {
         this.billets = new ArrayList<>();
     }
 
-    public void vendreBilletVille(Spectateur spectateur) {
+    public void vendreBilletVille(Personne personne) {
         if (festival.getMinCapacity() > 0) {
-            Billet billetPersonnel = new Billet(festival.achatBilletVille(), festival.getId(), spectateur);
+            Billet billetPersonnel = new Billet(festival.achatBilletVille(), festival.getId(), personne);
             this.billets.add(billetPersonnel);
-            spectateur.getBillets().add(billetPersonnel.getId());
+            personne.getBillets().add(billetPersonnel.getId());
         } else {
             System.out.println("Plus de billets disponibles pour la ville");
         }
     }
 
-    public void vendreBilletVilleLieu(Spectateur spectateur, Integer lieuId) {
+    public void vendreBilletVilleLieu(Personne personne, Integer lieuId) {
         boolean salleDisponible = false;
         
         for (Programmation prog : festival.getProgrammation()) {
@@ -35,9 +35,9 @@ public class Billetterie {
         }
         
         if (salleDisponible) {
-            Billet billetPersonnel = new Billet(festival.achatBilletLieu(lieuId), festival.getId(), spectateur);
+            Billet billetPersonnel = new Billet(festival.achatBilletLieu(lieuId), festival.getId(), personne);
             this.billets.add(billetPersonnel);
-            spectateur.getBillets().add(billetPersonnel.getId());
+            personne.getBillets().add(billetPersonnel.getId());
         } else {
             System.out.println("Plus de billets disponibles pour cette salle");
         }

@@ -7,7 +7,7 @@ public class Troupe {
     private static Integer incrementalId = 0;
     private Integer id;
     private String nom;
-    private List<Spectateur> artistes;
+    private List<Personne> artistes;
 
     public Troupe(String nom) {
         this.id = incrementalId++;
@@ -15,19 +15,19 @@ public class Troupe {
         this.artistes = new ArrayList<>();
     }
 
-    public void addArtiste(Spectateur spectateur) {
-        this.artistes.add(spectateur);
+    public void addArtiste(Personne personne) {
+        this.artistes.add(personne);
     }
 
     public void suppArtiste(Integer personneId) {
-        List<Spectateur> nouvelleListeArtistes = new ArrayList<>();
-        
-        for (Spectateur artiste : artistes) {
+        List<Personne> nouvelleListeArtistes = new ArrayList<>();
+
+        for (Personne artiste : artistes) {
             if (!artiste.getId().equals(personneId)) {
                 nouvelleListeArtistes.add(artiste);
             }
         }
-        
+
         this.artistes = nouvelleListeArtistes;
     }
 
@@ -43,7 +43,7 @@ public class Troupe {
         return nom;
     }
 
-    public List<Spectateur> getArtistes() {
+    public List<Personne> getArtistes() {
         return artistes;
     }
 }

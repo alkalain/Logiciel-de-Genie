@@ -8,13 +8,13 @@ public class Billet {
     private String proprietaireTel;
     private String proprietaireNom;
 
-    public Billet(Double prix, Integer spectacleId, Spectateur spectateur) {
+    public Billet(Double prix, Integer spectacleId, Personne personne) {
         this.idBillet = idBillet++;
         this.prix = prix;
         this.spectacleId = spectacleId;
-        this.proprietaireId = spectateur.getId();
-        this.proprietaireTel = spectateur.getNumTel();
-        this.proprietaireNom = spectateur.getNom();
+        this.proprietaireId = personne.getId();
+        this.proprietaireTel = personne.getNumTel();
+        this.proprietaireNom = personne.getNom();
     }
 
     public Integer getId() {
