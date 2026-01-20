@@ -20,6 +20,10 @@ public class Salle {
         this.reduction = reduction;
     }
 
+    public Salle(Ville ville, String nomSalle, String adresse, int capacite, Double prix) {
+        this(ville, nomSalle, adresse, capacite, prix, 0.0);
+    }
+
     public Salle(Ville ville, String nomSalle, String adresse, int capacite) {
         this(ville, nomSalle, adresse, capacite, 0.0, 0.0);
     }
