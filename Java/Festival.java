@@ -69,7 +69,7 @@ public class Festival {
         for (Programmation element : programmation) {
             element.setCapacite(element.getCapacite() - 1);
         }
-        return this.getPriceAllProgramations();
+        return getPriceAllProgramations();
     }
 
     public Double getPriceAllProgramations() {
